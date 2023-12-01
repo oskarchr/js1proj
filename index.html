@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+</head>
+
+<body class="bg-secondary">
+
+  <div class="container">
+      <form id="regForm">   
+        <div class="input mb-3">
+          <label for="title" class="form-label">New Todo: </label>
+          <input type="text" id="title" class="form-control">
+          <p class="error-msg"><p>
+        </div>
+        
+        <button class="btn btn-primary w-100">Add</button>
+      </form>
+    </div>
+  
+  
+    <div class="container">
+      <h1 class="text-center my-4">Todos</h1>
+      <ul class="todo-list" id="todo-list">
+        <li class="todo bg-light p-2 rounded mb-3">
+          <p class="fs-1 mb-0"></p>
+          <input id="todoCheck" type="checkbox" name="checkbox">
+          <button todo-id="${todo._id}" id="remove-${todo._id}" class="btn remove-btn"><i class="fa-solid fa-trash"></i></button>     
+        </li>
+      </ul>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="mb-0">You must mark a todo as completed before deleting it</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

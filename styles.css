@@ -1,0 +1,13 @@
+.todo-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .todo {
+    display: flex;
+  }
+  
+  i {
+    pointer-events: none;
+  }
+
