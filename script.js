@@ -45,18 +45,22 @@ function rendertodosArr() {
   errMsgContent.textContent = ''
   todosArr.forEach(todo => {
     todoList.insertAdjacentHTML('beforeend', `
-    <li class="todo bg-light p-2 rounded mb-3">
-      <p class="fs-1 mb-0">${todo.title}</p>
-      <input type="checkbox" id="todoCheck-${todo._id}" name="checkbox">
+    <li class="todo bg-light p-2 rounded mb-3 d-flex align-items-center w-50">
+      <p class="fs-3 mb-0 w-100 overflow-auto">${todo.title}</p>
+      <input class="form-check-input todoCheck mx-3" type="checkbox" id="todoCheck-${todo._id}" name="checkbox">
       <button todo-id="${todo._id}" id="remove-${todo._id}" class="btn remove-btn"><i class="fa-solid fa-trash"></i></button>
     </li>
     `)
-
+    
     const checkbox = document.querySelector('#todoCheck-' + todo._id)
+
     if (todo.completed == true){
       checkbox.checked = true
+      checkbox.parentElement.classList.toggle('text-decoration-line-through')
+
     } // Pre-mark completed todos when rendering
 
+   
 
     checkbox.addEventListener('change', async () => {
       const todoStatus = { completed: checkbox.checked }
@@ -73,8 +77,8 @@ function rendertodosArr() {
           throw new Error('Could not set todo to complete: ' + response.status)
         }
 
+        checkbox.parentElement.classList.toggle('text-decoration-line-through')
         todo.completed = todoStatus.completed
-        console.log(todosArr)
 
       } catch (err) {
         document.body.insertAdjacentHTML('beforeend', `

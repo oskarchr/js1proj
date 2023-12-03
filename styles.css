@@ -1,11 +1,16 @@
+
+
 .todo-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .todo {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+ 
+.todoCheck {
+  cursor: pointer;
+}
   
   i {
     pointer-events: none;
